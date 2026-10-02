@@ -215,6 +215,11 @@
     body.theme-pearl .text-cyan-400 { color: #0284c7 !important; }
     body.theme-pearl a.bg-gradient-to-r, body.theme-pearl button.bg-gradient-to-r { color: #ffffff !important; }
     body.theme-pearl a.bg-gradient-to-r span, body.theme-pearl button.bg-gradient-to-r span { color: #ffffff !important; }
+    body.theme-pearl .mobile-dock-fix { background-color: rgba(255, 255, 255, 0.96) !important; border-color: rgba(148, 163, 184, 0.3) !important; box-shadow: 0 -4px 25px rgba(0,0,0,0.08) !important; }
+    body.theme-pearl .mobile-dock-btn { background-color: #f1f5f9 !important; border-color: #e2e8f0 !important; color: #0f172a !important; }
+    body.theme-pearl .theme-badge { background-color: rgba(37, 99, 235, 0.08) !important; color: #1e40af !important; border-color: rgba(37, 99, 235, 0.25) !important; }
+    body.theme-gold .theme-badge { background-color: rgba(245, 158, 11, 0.12) !important; color: #facc15 !important; border-color: rgba(245, 158, 11, 0.3) !important; }
+    body.theme-cyber .theme-badge { background-color: rgba(6, 182, 212, 0.12) !important; color: #22d3ee !important; border-color: rgba(6, 182, 212, 0.3) !important; }
 
     /* 3D Tilt Card Physics */
     .tilt-card {
@@ -288,23 +293,22 @@
   <canvas id="sparkCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-60"></canvas>
 
   <!-- ============================================================
-       1. TOP HUD BAR WITH 3 THEMES & SOUND CONTROL
+       1. TOP HUD BAR WITH 3 THEMES & SOUND CONTROL (100% AUTO-FIT)
   ============================================================ -->
-  <div class="relative z-50 bg-black/40 backdrop-blur-md border-b border-white/10 text-xs py-2 px-3">
-    <div class="container-wide flex flex-wrap items-center justify-between gap-2">
+  <div class="relative z-50 bg-black/40 backdrop-blur-md border-b border-white/10 text-xs py-1.5 px-2.5 sm:px-4">
+    <div class="container-wide flex items-center justify-between gap-1.5 sm:gap-4">
       
       <!-- Hub Status Tagline -->
-      <div class="flex items-center gap-2 font-mono text-[11px] theme-sub-text">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full theme-btn-primary text-[10px] uppercase shadow-sm">
+      <div class="flex items-center gap-1.5 font-mono text-[10px] sm:text-[11px] theme-sub-text min-w-0">
+        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full theme-btn-primary text-[9px] sm:text-[10px] uppercase font-bold shrink-0 shadow-sm">
           <span class="w-1.5 h-1.5 rounded-full bg-current animate-ping"></span>
-          <span>B2B CENTRAL SOURCING HUB</span>
+          <span>HUB</span>
         </span>
-        <span class="hidden sm:inline opacity-40">|</span>
-        <span class="truncate">Masjid Bunder, Mumbai • Daily Pan-India Transport Loading Active</span>
+        <span class="truncate font-medium">Masjid Bunder, Mumbai • Pan-India Sourcing Active</span>
       </div>
       
       <!-- Right HUD Controls: 3 Theme Switcher + Audio Toggle -->
-      <div class="flex items-center gap-2 text-[11px] font-mono">
+      <div class="flex items-center gap-1.5 shrink-0">
         
         <!-- 3 Master Cinematic Themes Switcher (Pearl First) -->
         <div class="flex items-center p-0.5 rounded-full bg-black/30 border border-white/15 backdrop-blur-sm" id="themeSwitcherGroup">
@@ -320,9 +324,9 @@
         </div>
 
         <!-- Sound FX Button -->
-        <button id="audioToggleBtn" onclick="toggleAudio()" class="px-2.5 py-1 rounded-full bg-black/30 hover:bg-black/50 text-blue-600 font-bold border border-white/15 transition flex items-center gap-1.5 btn-spring">
+        <button id="audioToggleBtn" onclick="toggleAudio()" class="p-1 sm:px-2 rounded-full bg-black/30 hover:bg-black/50 text-blue-600 font-bold border border-white/15 transition flex items-center gap-1 btn-spring" title="Toggle Sound">
           <i data-lucide="volume-2" id="audioIcon" class="w-3.5 h-3.5"></i>
-          <span id="audioLabel" class="hidden sm:inline">Sound: ON</span>
+          <span id="audioLabel" class="hidden sm:inline text-[10px]">Sound</span>
         </button>
 
       </div>
@@ -330,39 +334,39 @@
   </div>
 
   <!-- ============================================================
-       2. PRIMARY CORPORATE HEADER
+       2. PRIMARY CORPORATE HEADER (COMPACT & SLEEK)
   ============================================================ -->
-  <header class="sticky top-[33px] z-40 bg-black/40 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all theme-header-fix">
-    <div class="container-wide h-18 py-3 flex items-center justify-between gap-4">
+  <header class="sticky top-0 z-40 bg-black/40 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all theme-header-fix">
+    <div class="container-wide py-2 sm:py-3 flex items-center justify-between gap-2 sm:gap-4">
       
       <!-- Brand Logo -->
-      <a href="#home" onclick="sound.playChime()" class="flex items-center gap-2.5 sm:gap-3 group">
-        <div class="relative">
-          <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-amber-400 via-cyan-400 to-emerald-400 p-0.5 shadow-lg group-hover:scale-105 transition">
-            <div class="w-full h-full bg-black/80 rounded-[14px] flex items-center justify-center text-amber-300 font-black text-lg sm:text-xl font-heading">
+      <a href="#home" onclick="sound.playChime()" class="flex items-center gap-2 sm:gap-3 group min-w-0">
+        <div class="relative shrink-0">
+          <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-amber-400 via-cyan-400 to-emerald-400 p-0.5 shadow-lg group-hover:scale-105 transition">
+            <div class="w-full h-full bg-black/80 rounded-[10px] flex items-center justify-center text-amber-300 font-black text-base sm:text-xl font-heading">
               BE
             </div>
           </div>
-          <div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-black shadow-sm"></div>
+          <div class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-black"></div>
         </div>
 
-        <div>
-          <div class="flex items-center gap-1.5 sm:gap-2">
-            <span class="font-heading font-black text-base sm:text-xl tracking-tight leading-none group-hover:text-amber-300 transition">
-              BELUBEARI <span class="theme-gradient-text font-black">EXIM</span>
+        <div class="min-w-0">
+          <div class="flex items-center gap-1.5">
+            <span class="font-heading font-black text-sm sm:text-xl tracking-tight leading-none truncate">
+              BELUBEARI <span class="theme-gradient-text">EXIM</span>
             </span>
-            <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-extrabold font-mono bg-white/10 theme-accent-text border border-white/15">
+            <span class="hidden md:inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-extrabold font-mono bg-white/10 theme-accent-text border border-white/15">
               ESTD. 2018
             </span>
           </div>
-          <p class="text-[10px] sm:text-[11px] theme-sub-text font-medium mt-0.5 truncate max-w-[210px] sm:max-w-none">
-            Transmission, Bearings & Engineering Suite • Mumbai
+          <p class="text-[9px] sm:text-[11px] theme-sub-text font-medium mt-0.5 truncate max-w-[170px] sm:max-w-none">
+            Transmission & Bearings Suite • Mumbai
           </p>
         </div>
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden lg:flex items-center gap-5 text-xs font-bold uppercase tracking-wider font-mono theme-sub-text">
+      <nav class="hidden lg:flex items-center gap-4 text-xs font-bold uppercase tracking-wider font-mono theme-sub-text">
         <a href="#portfolio" onclick="sound.playHover()" class="hover:text-amber-300 transition flex items-center gap-1"><i data-lucide="layers" class="w-3.5 h-3.5 theme-accent-text"></i> Spectrum</a>
         <a href="#tools" onclick="sound.playHover()" class="hover:text-amber-300 theme-accent-text transition flex items-center gap-1 font-extrabold"><i data-lucide="calculator" class="w-3.5 h-3.5"></i> B2B Tools</a>
         <a href="#cross-ref" onclick="sound.playHover()" class="hover:text-amber-300 transition flex items-center gap-1"><i data-lucide="git-compare" class="w-3.5 h-3.5 theme-accent-text"></i> Cross-Ref</a>
@@ -372,14 +376,14 @@
       </nav>
 
       <!-- Action Buttons -->
-      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-        <a href="tel:+919967384878" onclick="sound.playClick()" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-bold border border-white/15 transition btn-spring">
+      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <a href="tel:+919967384878" onclick="sound.playClick()" class="inline-flex items-center justify-center w-8 h-8 sm:w-auto sm:h-auto sm:px-3 sm:py-2 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-bold border border-white/15 transition btn-spring" title="Call Sales Hub">
           <i data-lucide="phone-call" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span>+91 99673 84878</span>
+          <span class="hidden sm:inline ml-1.5">+91 99673 84878</span>
         </a>
-        <a href="https://wa.me/919967384878?text=Hello%20M/s%20Belubeari%20Exim,%20I%20have%20an%20industrial%20purchase%20inquiry." target="_blank" rel="noopener noreferrer" onclick="sound.playChime()" class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-500 hover:from-emerald-400 hover:to-emerald-500 text-white text-xs sm:text-sm font-black shadow-lg shadow-emerald-600/30 transition btn-spring">
-          <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
-          <span>WhatsApp Desk</span>
+        <a href="https://wa.me/919967384878?text=Hello%20M/s%20Belubeari%20Exim,%20I%20have%20an%20industrial%20purchase%20inquiry." target="_blank" rel="noopener noreferrer" onclick="sound.playChime()" class="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white text-xs sm:text-sm font-black shadow-md shadow-emerald-600/30 transition btn-spring shrink-0">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white"></i>
+          <span class="text-[11px] sm:text-xs">WhatsApp</span>
         </a>
       </div>
 
@@ -389,63 +393,65 @@
   <!-- ============================================================
        3. CINEMATIC HERO SECTION
   ============================================================ -->
-  <section id="home" class="relative z-10 pt-8 pb-14 md:pt-16 md:pb-24 overflow-hidden border-b border-white/10">
+  <section id="home" class="relative z-10 pt-4 sm:pt-8 pb-8 sm:pb-16 md:pt-16 md:pb-24 overflow-hidden border-b border-white/10">
     
     <div class="container-wide relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
         
         <!-- Left Hero Content -->
-        <div class="lg:col-span-7 space-y-4 sm:space-y-6">
+        <div class="lg:col-span-7 space-y-3 sm:space-y-5">
           
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-[11px] sm:text-xs font-mono theme-accent-text shadow-md">
-            <span class="w-2 h-2 rounded-full bg-current animate-ping"></span>
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full theme-badge text-[10px] sm:text-xs font-mono font-bold shadow-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-current animate-ping"></span>
             <span>MULTI-THEME INDUSTRIAL SOURCING ENGINE</span>
           </div>
 
-          <h1 class="font-heading font-black text-2xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1]">
+          <h1 class="font-heading font-black text-2xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15]">
             Master Mechanical <br />
             <span class="theme-gradient-text">
               Transmission & Bearings
             </span>
           </h1>
 
-          <p class="text-xs sm:text-base theme-sub-text max-w-2xl font-normal leading-relaxed">
+          <p class="text-xs sm:text-sm md:text-base theme-sub-text max-w-2xl font-normal leading-relaxed">
             Welcome to <strong class="font-black">M/s Belubeari Exim</strong> — Mumbai’s premier wholesale distribution hub for authentic Japanese <strong class="theme-accent-text font-bold">Mitsuboshi</strong> & German <strong class="theme-accent-text font-bold">Conti</strong> timing belts, precision bearings, heavy conveyor systems, and CNC linear guide rails.
           </p>
 
-          <!-- Magnetic Action Buttons -->
-          <div class="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2">
-            <a href="#portfolio" onclick="sound.playWarp()" class="px-4 sm:px-6 py-3 sm:py-3.5 rounded-2xl theme-btn-primary font-black text-xs sm:text-sm transition btn-spring shadow-xl flex items-center gap-2">
+          <!-- Magnetic Action Buttons (Adaptive Grid on Mobile) -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 pt-1 sm:pt-2">
+            <a href="#portfolio" onclick="sound.playWarp()" class="w-full sm:w-auto px-4 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl theme-btn-primary font-black text-xs sm:text-sm transition btn-spring shadow-lg flex items-center justify-center gap-2">
               <i data-lucide="layers" class="w-4 h-4"></i>
               <span>Explore 12 Product Lines</span>
             </a>
-            <a href="#tools" onclick="sound.playCalc()" class="px-4 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-white/10 hover:bg-white/15 text-xs sm:text-sm font-bold border border-white/15 transition btn-spring flex items-center gap-2 shadow-md">
-              <i data-lucide="calculator" class="w-4 h-4 theme-accent-text"></i>
-              <span>B2B Calculation Suite</span>
-            </a>
-            <a href="#rfq-desk" onclick="sound.playClick()" class="px-4 sm:px-5 py-3 sm:py-3.5 rounded-2xl bg-black/30 hover:bg-black/40 text-xs sm:text-sm font-bold border border-white/10 transition btn-spring flex items-center gap-2">
-              <i data-lucide="send" class="w-4 h-4 text-emerald-400"></i>
-              <span>Quick RFQ</span>
-            </a>
+            <div class="grid grid-cols-2 gap-2 w-full sm:w-auto sm:flex sm:items-center">
+              <a href="#tools" onclick="sound.playCalc()" class="px-3 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl bg-white/10 hover:bg-white/15 text-xs sm:text-sm font-bold border border-white/15 transition btn-spring flex items-center justify-center gap-1.5 shadow-sm">
+                <i data-lucide="calculator" class="w-3.5 h-3.5 theme-accent-text"></i>
+                <span>B2B Tools</span>
+              </a>
+              <a href="#rfq-desk" onclick="sound.playClick()" class="px-3 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl bg-black/30 hover:bg-black/40 text-xs sm:text-sm font-bold border border-white/10 transition btn-spring flex items-center justify-center gap-1.5">
+                <i data-lucide="send" class="w-3.5 h-3.5 text-emerald-400"></i>
+                <span>Quick RFQ</span>
+              </a>
+            </div>
           </div>
 
           <!-- Dynamic Metrics Grid (2x2 on mobile) -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 pt-4 border-t border-white/10">
-            <div class="p-3 rounded-2xl theme-card-bg text-center">
-              <p class="font-mono font-black text-lg sm:text-2xl theme-accent-text">10,000+</p>
-              <p class="text-[10px] sm:text-[11px] theme-sub-text font-medium">SKUs In Stock</p>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 pt-3 sm:pt-4 border-t border-white/10">
+            <div class="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl theme-card-bg text-center">
+              <p class="font-mono font-black text-base sm:text-2xl theme-accent-text">10,000+</p>
+              <p class="text-[9px] sm:text-[11px] theme-sub-text font-medium">SKUs In Stock</p>
             </div>
-            <div class="p-3 rounded-2xl theme-card-bg text-center">
-              <p class="font-mono font-black text-lg sm:text-2xl theme-accent-text">Same-Day</p>
-              <p class="text-[10px] sm:text-[11px] theme-sub-text font-medium">Mumbai Dispatch</p>
+            <div class="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl theme-card-bg text-center">
+              <p class="font-mono font-black text-base sm:text-2xl theme-accent-text">Same-Day</p>
+              <p class="text-[9px] sm:text-[11px] theme-sub-text font-medium">Mumbai Dispatch</p>
             </div>
-            <div class="p-3 rounded-2xl theme-card-bg text-center">
-              <p class="font-mono font-black text-lg sm:text-2xl text-emerald-400">100%</p>
-              <p class="text-[10px] sm:text-[11px] theme-sub-text font-medium">GST Invoiced</p>
+            <div class="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl theme-card-bg text-center">
+              <p class="font-mono font-black text-base sm:text-2xl text-emerald-400">100%</p>
+              <p class="text-[9px] sm:text-[11px] theme-sub-text font-medium">GST Invoiced</p>
             </div>
-            <div class="p-3 rounded-2xl theme-card-bg text-center">
-              <p class="font-mono font-black text-lg sm:text-2xl">2018</p>
-              <p class="text-[10px] sm:text-[11px] theme-sub-text font-medium">Estd. Entity Hub</p>
+            <div class="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl theme-card-bg text-center">
+              <p class="font-mono font-black text-base sm:text-2xl">2018</p>
+              <p class="text-[9px] sm:text-[11px] theme-sub-text font-medium">Estd. Entity Hub</p>
             </div>
           </div>
 
@@ -1523,24 +1529,24 @@
   </footer>
 
   <!-- ============================================================
-       12. STICKY MOBILE DOCK
+       12. STICKY MOBILE DOCK (100% AUTO-FIT & CLEAN CONTRAST)
   ============================================================ -->
-  <div class="fixed bottom-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-2xl border-t border-white/15 p-2 sm:hidden shadow-2xl">
+  <div class="fixed bottom-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-2xl border-t border-white/15 px-2 py-1.5 sm:hidden shadow-2xl mobile-dock-fix">
     <div class="grid grid-cols-4 gap-1.5 text-center text-[10px] font-bold font-mono">
-      <a href="#portfolio" onclick="sound.playHover()" class="py-2 rounded-xl bg-white/5 border border-white/10 btn-spring">
-        <i data-lucide="grid" class="w-4 h-4 mx-auto theme-accent-text mb-0.5"></i>
+      <a href="#portfolio" onclick="sound.playHover()" class="py-1.5 rounded-xl bg-white/5 border border-white/10 btn-spring mobile-dock-btn">
+        <i data-lucide="grid" class="w-3.5 h-3.5 mx-auto theme-accent-text mb-0.5"></i>
         <span>Catalog</span>
       </a>
-      <a href="#tools" onclick="sound.playCalc()" class="py-2 rounded-xl bg-white/5 border border-white/10 btn-spring">
-        <i data-lucide="calculator" class="w-4 h-4 mx-auto theme-accent-text mb-0.5"></i>
+      <a href="#tools" onclick="sound.playCalc()" class="py-1.5 rounded-xl bg-white/5 border border-white/10 btn-spring mobile-dock-btn">
+        <i data-lucide="calculator" class="w-3.5 h-3.5 mx-auto theme-accent-text mb-0.5"></i>
         <span>Tools</span>
       </a>
-      <a href="tel:+919967384878" onclick="sound.playClick()" class="py-2 rounded-xl bg-white/5 border border-white/10 btn-spring">
-        <i data-lucide="phone-call" class="w-4 h-4 mx-auto text-emerald-400 mb-0.5"></i>
+      <a href="tel:+919967384878" onclick="sound.playClick()" class="py-1.5 rounded-xl bg-white/5 border border-white/10 btn-spring mobile-dock-btn">
+        <i data-lucide="phone-call" class="w-3.5 h-3.5 mx-auto text-emerald-500 mb-0.5"></i>
         <span>Call</span>
       </a>
-      <a href="https://wa.me/919967384878?text=Hello%20M/s%20Belubeari%20Exim,%20I%20have%20an%20urgent%20industrial%20part%20enquiry." target="_blank" rel="noopener noreferrer" onclick="sound.playChime()" class="py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white btn-spring shadow-md">
-        <i data-lucide="message-circle" class="w-4 h-4 mx-auto text-white mb-0.5"></i>
+      <a href="https://wa.me/919967384878?text=Hello%20M/s%20Belubeari%20Exim,%20I%20have%20an%20urgent%20industrial%20part%20enquiry." target="_blank" rel="noopener noreferrer" onclick="sound.playChime()" class="py-1.5 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white btn-spring shadow-md flex flex-col items-center justify-center">
+        <i data-lucide="message-circle" class="w-3.5 h-3.5 mx-auto text-white mb-0.5"></i>
         <span>WhatsApp</span>
       </a>
     </div>
